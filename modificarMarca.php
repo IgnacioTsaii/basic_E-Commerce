@@ -1,23 +1,23 @@
 <?php
 require 'autenticar.php'; 
 require 'funciones/conexion.php';
-require 'funciones/funcionesCategorias.php';
-$chequeo = agregarCategoria();
+require 'funciones/funcionesMarcas.php';
+$chequeo = modificarMarca();
 include 'includes/header.html';
 include 'includes/nav.php';
 ?>
 
 <main class="container">
-    <h1>Alta de una Categoria</h1>
+    <h1>Modificar una Marca</h1>
 
     <?php
 
     $clase = 'danger';
-    $mensaje = 'No se pudo agregar la categoria';
+    $mensaje = 'No se pudo modificar la marca';
 
     if ($chequeo) {
         $clase = 'success';
-        $mensaje = 'Categoria agregada correctamente';
+        $mensaje = 'Marca modificada correctamente';
     }
 
     ?>
@@ -25,7 +25,7 @@ include 'includes/nav.php';
     <div class="alert alert-<?php echo $clase?>">
         <?php echo $mensaje?>
         <br>
-        <a href="adminCategorias.php" class="btn btn-outline-dark my-2">Volver al panel categorias</a>
+        <a href="adminMarcas.php" class="btn btn-outline-dark my-2">Volver al panel marcas</a>
     </div>
 
 </main>

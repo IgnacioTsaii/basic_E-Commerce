@@ -1,35 +1,22 @@
-<?php  
-	include 'includes/header.html';
-	include 'includes/nav.php'; 
-	// requiere se usa para incluir librerías. Interrume la ejecución
+<?php   
+        require 'autenticar.php'; 
+		include 'includes/header.html';
+		include 'includes/nav.php';  
 ?>
 
     <main class="container">
-        <h1>Formulario de Alta de Categoria</h1>
+        <h1>Formulario de alta de una nueva Categoria</h1>
+        <div class="card bg-light p-3">
+            <form action="agregarCategoria.php" method="POST">
+                
+                <label for="nombre">Nombre de Categoria</label>
+                <input type="text" name="catNombre" id="nombre" class="form-control" required>
+                <br>
+                <button class="btn btn-dark">Agregar Categoria</button>
+                <a href="adminCategorias.php" class="btn btn-outline-dark mx-2">Volver al panel categorias</a>
 
-<!--CREAMOS EL FORMULARIO--> 
-
-<div class="card bg-light m-3">
-
-<form action="agregarCategoria.php" method="post">
-	
-	<label for="nombre">Nombre de la Categoria: </label>
-
-<!--L AGREGAR LA CLASS "FORM-CONTROL" se ve mas anchos tiene los bordes redondeados , un padding-->
-
-	<input type="text" name="catNombre" class="form-control" id="nombre" required>
-
-	<br>
-	<button class="btn btn-secondary" >
-		Agregar Categoria
-	</button>
-	<a href="adminCategoria.php" class="btn btn-outline-secondary mx-2"> Volver al Panel de Categoria</a>
-
-</form>	
-
-</div>
-
-
+            </form>
+        </div>
     </main>
 
-<?php include 'includes/footer.php'; ?>
+<?php  include 'includes/footer.php';  ?>
